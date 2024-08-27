@@ -8,9 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\InteropSourceGenerator\InteropSourceGenerator.csproj"
-					  OutputItemType="Analyzer"
-                      ReferenceOutputAssembly="false"/>
+    <None Remove="sum.h" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="sum.h" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\InteropSourceGenerator\InteropSourceGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
   </ItemGroup>
 	
 </Project>
