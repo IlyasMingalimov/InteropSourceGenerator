@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteropSourceGenerator", "InteropSourceGenerator\InteropSourceGenerator.csproj", "{B567847F-343E-41E6-8FC5-C757E56EE992}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InteropSourceGenerator", "InteropSourceGenerator\InteropSourceGenerator.csproj", "{B567847F-343E-41E6-8FC5-C757E56EE992}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteropSourceGenerator.Exemple", "InteropSourceGenerator.Exemple\InteropSourceGenerator.Exemple.csproj", "{12F0E416-6334-4B25-BFAC-0D9B9739B76E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InteropSourceGenerator.Examples", "InteropSourceGenerator.Exemple\InteropSourceGenerator.Examples.csproj", "{12F0E416-6334-4B25-BFAC-0D9B9739B76E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
