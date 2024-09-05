@@ -1,10 +1,11 @@
-﻿using Microsoft.CodeAnalysis;
+﻿using InteropCodeGenerator;
+using Microsoft.CodeAnalysis;
 using System.IO;
 
 namespace InteropSourceGenerator
 {
 	[Generator(LanguageNames.CSharp)]
-    public class InteropSourceGenerator : IIncrementalGenerator
+    public class SourceGenerator : IIncrementalGenerator
     {
         public void Initialize(IncrementalGeneratorInitializationContext initContext)
         {
@@ -14,14 +15,8 @@ namespace InteropSourceGenerator
 
             initContext.RegisterSourceOutput(namesAndContents, (spc, nameAndContent) =>
             {
-                spc.AddSource($"Interop.{nameAndContent.name}", Generate(nameAndContent.content, nameAndContent.name));
+                spc.AddSource($"Interop.{nameAndContent.name}", CodeGenerator.Generate(nameAndContent.content, nameAndContent.name));
             });
         }
-
-        private static string Generate(string content, string name) 
-        {
-            return $"namespace Include {{ public static class {name} {{ public static void TestMethod() => Console.WriteLine(\"HelloWorld\"); }} }}";
-
-		}
     }
 }
