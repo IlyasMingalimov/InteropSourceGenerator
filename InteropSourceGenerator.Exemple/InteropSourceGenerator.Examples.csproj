@@ -8,15 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="C++ Standard Library\fstream.h" />
-    <None Remove="C++ Standard Library\iomanip.h" />
-    <None Remove="Vulkan-Headers\vulkan.h" />
+    <None Remove="sum.h" />
   </ItemGroup>
 
   <ItemGroup>
-    <AdditionalFiles Include="C++ Standard Library\fstream.h" />
-    <AdditionalFiles Include="C++ Standard Library\iomanip.h" />
-    <AdditionalFiles Include="Vulkan-Headers\vulkan.h" />
+    <AdditionalFiles Include="sum.h" />
   </ItemGroup>
 
   <ItemGroup>

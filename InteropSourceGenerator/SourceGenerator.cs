@@ -11,11 +11,11 @@ namespace InteropSourceGenerator
         {
             IncrementalValuesProvider<AdditionalText> textFiles = initContext.AdditionalTextsProvider.Where(file => file.Path.EndsWith(".h"));
 
-            IncrementalValuesProvider<(string name, string content)> namesAndContents = textFiles.Select((text, cancellationToken) => (name: Path.GetFileNameWithoutExtension(text.Path), content: text.GetText(cancellationToken).ToString()));
+            IncrementalValuesProvider<(string name, string content, string path)> namesAndContentAndPaths = textFiles.Select((text, cancellationToken) => (name: Path.GetFileNameWithoutExtension(text.Path), content: text.GetText(cancellationToken).ToString(), path: text.Path ));
 
-            initContext.RegisterSourceOutput(namesAndContents, (spc, nameAndContent) =>
+            initContext.RegisterSourceOutput(namesAndContentAndPaths, (spc, nameAndContentAndPath) =>
             {
-                spc.AddSource($"Interop.{nameAndContent.name}", CodeGenerator.Generate(nameAndContent.content, nameAndContent.name));
+                spc.AddSource($"Interop.{nameAndContentAndPath.name}", CodeGenerator.Generate(nameAndContentAndPath.content, nameAndContentAndPath.name, nameAndContentAndPath.path));
             });
         }
     }
